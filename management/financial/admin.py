@@ -1,3 +1,7 @@
 from django.contrib import admin
+from financial.models import Currency, ExchangesRate, Subscription
 
-# Register your models here.
+
+admin.site.register(Currency)
+admin.site.register(ExchangesRate)
+admin.site.register(Subscription)

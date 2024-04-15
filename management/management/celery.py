@@ -10,10 +10,8 @@ app.config_from_object('django.conf:settings', namespace='CELERY')
 app.autodiscover_tasks()
 
 app.conf.beat_schedule = {
-
-    'check_transactions': {
-        'task': 'management.tasks.check_orders_and_send_mails',
-        'schedule': crontab(day_of_month='1', hour='0', minute='0')
-
-    }
+    'every-1-minute': {
+        'task': 'financial.tasks.add_to_db',
+        'schedule': 60.0
+    },
 }
