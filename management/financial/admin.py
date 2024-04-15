@@ -7,6 +7,11 @@ class CurrencyAdmin(admin.ModelAdmin):
     search_fields = ('name', 'code')
 
 
+class ExchangesRateAdmin(admin.ModelAdmin):
+    list_display = ('currency_from', 'to_currency', 'exchange_rate', 'created_date')
+    search_fields = ('currency_from', 'to_currency', 'exchange_rate', 'created_date')
+
+
 admin.site.register(Currency, CurrencyAdmin)
-admin.site.register(ExchangesRate)
+admin.site.register(ExchangesRate, ExchangesRateAdmin)
 admin.site.register(Subscription)

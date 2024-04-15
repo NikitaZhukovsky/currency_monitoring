@@ -5,5 +5,5 @@ from datetime import date
 
 class CurrencySerialiazer(serializers.ModelSerializer):
     class Meta:
-        model = Currency
-        fields = ('id', 'name', 'description')
+        model = ExchangesRate
+        fields = ('currency_from', 'currency_to', 'exchange_rate')

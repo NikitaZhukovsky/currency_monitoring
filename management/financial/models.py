@@ -7,7 +7,7 @@ class Currency(models.Model):
     code = models.CharField(max_length=20)
 
     def __str__(self):
-        return f'{self.name} {self.code}'
+        return f'{self.name}'
 
     class Meta:
         verbose_name = 'Currency'
@@ -16,9 +16,9 @@ class Currency(models.Model):
 
 class ExchangesRate(models.Model):
     currency_from = models.ForeignKey(Currency, on_delete=models.CASCADE, related_name='currency_from')
-    to_currency = models.ForeignKey(Currency, on_delete=models.CASCADE, related_name='currency_to')
+    to_currency = models.ForeignKey(Currency, on_delete=models.CASCADE, related_name='to_currency')
     exchange_rate = models.DecimalField(max_digits=5, decimal_places=3, default=0.000)
-    created_date = models.DateField()
+    created_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name = 'Exchanges Rate'
