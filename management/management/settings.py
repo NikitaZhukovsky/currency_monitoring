@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'users',
     'financial',
     'rest_framework',
-    'djoser'
+    'djoser',
+    'django_celery_beat'
 ]
 
 MIDDLEWARE = [
@@ -186,3 +187,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CELERY_BROKER_URL = f'amqp://guest:guest@localhost'
+CELERY_RESULT_BACKEND = f'rpc://'
+CELERY_BROKER_SCHEDULER = 'django_celery_beat/schedulers:DatabaseScheduler'
+
