@@ -7,7 +7,7 @@ from django.conf import settings
 
 @shared_task()
 def add_to_db():
-    time.sleep(5)
+
     return 'Aboba'
 
 

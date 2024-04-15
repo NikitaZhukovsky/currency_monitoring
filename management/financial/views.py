@@ -15,6 +15,7 @@ class BankAPI(APIView):
             if item['Cur_ID'] == 431:
                 print(item['Cur_Abbreviation'], item['Cur_OfficialRate'])
 
+
         add_to_db()
 
         return Response()

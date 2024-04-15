@@ -17,6 +17,7 @@ class Currency(models.Model):
 class ExchangesRate(models.Model):
     currency_from = models.ForeignKey(Currency, on_delete=models.CASCADE, related_name='currency_from')
     to_currency = models.ForeignKey(Currency, on_delete=models.CASCADE, related_name='currency_to')
+    exchange_rate = models.DecimalField(max_digits=5, decimal_places=3, default=0.000)
     created_date = models.DateField()
 
     class Meta:
