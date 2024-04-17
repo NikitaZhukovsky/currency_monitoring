@@ -8,8 +8,8 @@ class CurrencyAdmin(admin.ModelAdmin):
 
 
 class ExchangesRateAdmin(admin.ModelAdmin):
-    list_display = ('currency_from', 'to_currency', 'exchange_rate', 'created_date')
-    search_fields = ('currency_from', 'to_currency', 'exchange_rate', 'created_date')
+    list_display = ('currency_from', 'currency_to', 'exchange_rate', 'created_date')
+    search_fields = ('currency_from', 'currency_to', 'exchange_rate', 'created_date')
 
 
 admin.site.register(Currency, CurrencyAdmin)
